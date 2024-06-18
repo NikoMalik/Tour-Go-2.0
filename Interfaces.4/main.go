@@ -95,6 +95,8 @@ func main() {
 
 	fmt.Println(Mike.sum)
 
+	fmt.Println("------")
+
 	apiServer := &ApiServer{
 		storer: &MongoDB{},
 	}
@@ -116,6 +118,18 @@ func main() {
 	}
 
 	fmt.Println(result)
+
+	fmt.Println("------")
+
+	quackers := []Quacker{
+		&Duck{}, &Duckling{}, &Drake{},
+	}
+
+	for i := 0; i < len(quackers); i++ {
+		quackers[i].Quack()
+	}
+
+	// or use range if you want this is simple
 
 }
 
@@ -209,4 +223,30 @@ func (m *MySQL) Put(number int) ([]int, error) {
 
 type ApiServer struct {
 	storer Storer
+}
+
+// another example simple to understand
+
+type Quacker interface {
+	Quack()
+}
+
+type Duck struct {
+}
+
+type Drake struct{}
+
+type Duckling struct{}
+
+func (d *Duck) Quack() {
+
+	fmt.Println("duck")
+}
+
+func (d *Drake) Quack() {
+	fmt.Println("drake")
+}
+
+func (d *Duckling) Quack() {
+	fmt.Println("quackling")
 }

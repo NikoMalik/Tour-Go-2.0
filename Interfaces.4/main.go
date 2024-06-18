@@ -145,8 +145,7 @@ type Employee struct {
 	sum  float64
 }
 
-type CEO struct { // functions from interface will be work only with this 2 structs
-	// and interface will be able to tell the difference
+type CEO struct {
 	name string
 	sum  float64
 }

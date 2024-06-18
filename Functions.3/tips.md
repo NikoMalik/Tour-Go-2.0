@@ -74,3 +74,32 @@ const (
   to the correct version. However, it is useful to remember that parentheses are necessary to keep the
   parentheses are necessary to indicate the values passed to the closure
   when the closure is started
+
+# Difference in performance difference between `for-range` and `for-loop`
+
+#### As you know `for-range` copy every element and if we make test in performance we get this
+
+```go
+func sumRange(objects []Obj) int {
+  ret := 0
+  for _, v := range objects {
+    ret += v.index
+  }
+  return ret
+}
+
+func sumLoop(objects []Obj) int {
+  ret := 0
+  for i := 0; i < len(objects); i++ {
+    ret += objects[i]
+  }
+  return ret
+}
+```
+
+Result :
+
+BenchmarkForRange-4 443161 2371ns/op
+BenchmarkForLoop-4 1863501 641.7ns/op
+
+> the bigger the object inside the slide, the bigger the difference will be.

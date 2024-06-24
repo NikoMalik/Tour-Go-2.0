@@ -68,3 +68,34 @@ var x = []int{}
 
 - The comma-ok idiom is used in Go when you want to distinguish between reading a value and returning a null value
   value
+
+- we can use struct in struct:
+
+```go
+type person struct {
+  name string
+  age int
+}
+
+type someone struct {
+  person
+  someoneIdent string
+  {
+
+```
+
+- we can declared values like this:
+
+```go
+
+type name struct {
+  name string
+  age byte
+}
+
+func main() {
+  e := name{}
+  e.name = "gigachad"
+  e.age = 255
+
+```

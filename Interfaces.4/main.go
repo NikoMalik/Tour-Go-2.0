@@ -129,6 +129,12 @@ func main() {
 		quackers[i].Quack()
 	}
 
+	s := &QuackerType{
+		quack: &Drake{},
+	}
+
+	s.quack.Quack()
+
 	// or use range if you want this is simple
 
 }
@@ -248,4 +254,10 @@ func (d *Drake) Quack() {
 
 func (d *Duckling) Quack() {
 	fmt.Println("quackling")
+}
+
+// also we can make this
+
+type QuackerType struct {
+	quack Quacker
 }

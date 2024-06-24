@@ -128,14 +128,13 @@ func main() {
 	for i := 0; i < len(quackers); i++ {
 		quackers[i].Quack()
 	}
+	// or use range if you want this is simple
 
 	s := &QuackerType{
 		quack: &Drake{},
 	}
 
 	s.quack.Quack()
-
-	// or use range if you want this is simple
 
 }
 
@@ -261,3 +260,5 @@ func (d *Duckling) Quack() {
 type QuackerType struct {
 	quack Quacker
 }
+
+// we can use interfaces to types not only methods

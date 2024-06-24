@@ -1,3 +1,5 @@
+https://go.dev/doc/effective_go
+
 # So when is it best to use each of of these types?
 
 ### In most cases and most often the usual _int_ is used (99%)
